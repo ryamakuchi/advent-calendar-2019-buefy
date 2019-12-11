@@ -72,6 +72,8 @@
         </b-table-column>
       </template>
     </b-table>
+
+    <p>※ このページはレスポンシブ対応していません。デスクトップサイズの画面でご覧ください。</p>
   </section>
 </template>
 
