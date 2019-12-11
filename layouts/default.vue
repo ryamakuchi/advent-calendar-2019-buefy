@@ -1,74 +1,42 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
+    <b-navbar class="has-shadow is-spaced">
+      <template slot="brand">
+        <logo />
+
         <a
-          class="navbar-item"
-          href="/"
+          href="https://qiita.com/advent-calendar/2019/nuxt-js"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="level-item has-text-weight-bold has-text-primary"
         >
-          <img
-            src="~assets/buefy.png"
-            alt="Buefy"
-            height="28"
-          >
+          Nuxt.js Advent Calendar 2019 for Qiita
         </a>
+      </template>
 
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-    </nav>
-
-    <section class="main-content columns">
-      <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
-            :key="key"
+      <template slot="end">
+        <b-navbar-item tag="div">
+          <a
+            href="https://buefy.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button is-primary"
           >
-            <nuxt-link
-              :to="item.to"
-              exact-active-class="is-active"
-            >
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </aside>
+              Made with Buefy
+          </a>
+        </b-navbar-item>
+      </template>
+    </b-navbar>
 
-      <div class="container column is-10">
-        <nuxt />
-      </div>
-    </section>
+    <nuxt />
   </div>
 </template>
 
 <script>
+import Logo from '~/components/Logo.vue'
 export default {
-  data () {
-    return {
-      items: [
-        {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' }
-        },
-        {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
-        }
-      ]
-    }
+  components: {
+    Logo
   }
 }
 </script>
