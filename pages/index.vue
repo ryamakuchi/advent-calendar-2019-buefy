@@ -24,11 +24,11 @@
             v-if="days[props.row[dateKeys[index]]]"
             class="tag is-primary is-medium"
           >
-            {{ props.row[dateKeys[index]] }}
+            {{ days[props.row[dateKeys[index]]].date }}
           </p>
 
           <p v-else class="tag is-light is-medium">
-            {{ props.row[dateKeys[index]] }}
+            {{ (props.row[dateKeys[index]] + 1) }}
           </p>
 
           <article
